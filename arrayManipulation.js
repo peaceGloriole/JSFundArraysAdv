@@ -4,13 +4,14 @@ function arrManipul(arr) {
     .shift()
     .split(` `)
     .map(Number);
-
+// loop through the original arr
   for (let i = 0; i < arr.length; i++) {
+    // separate commands from numbers
     let [command, num, index] = arr[i].split(` `);
 
     num = Number(num);
     index = Number(index);
-
+// check every command and do operations
     switch (command) {
       case `Add`: add(num); break;
       case `Remove`: remove(num); break;
@@ -19,7 +20,7 @@ function arrManipul(arr) {
     }
 
   }
-
+// 4 functions for the different commands
   function add(el) {
     newArr.push(el);
   }
@@ -35,7 +36,7 @@ function arrManipul(arr) {
   function insert(num, index) {
     newArr.splice(index, 0, num);
   }
-
+  
   console.log(newArr.join(` `));
 }
 
